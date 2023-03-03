@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import tensorflow as tf
 import numpy as np
-st.header("Real time classification")
+st.header("Weather Classifier")
 def load_model(path):
     return tf.keras.models.load_model(path)
 def predict_prob_and_class(model, img):
@@ -46,7 +46,7 @@ if uploaded_file is not None:
    img = load_and_prep_image(uploaded_file)
    prob, class_name = predict_prob_and_class(loaded_model, img)
    st.write("Class:",class_name)
-   st.write("Max_prob",prob)
+   st.write("Probability",prob)
 else:
    st.write("Upload a file")
 # url = st.text_input("Enter an url of a Picture")
