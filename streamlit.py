@@ -7,7 +7,7 @@ def load_model(path):
     return tf.keras.models.load_model(path)
 def predict_prob_and_class(model, img):
     probs = model.predict(tf.expand_dims(img, axis=0))
-    max_prob = probs.max()
+    max_prob = np.round(probs.max() * 100,2)
     preds = probs.argmax()
     class_names = ['Cloudy', 'Rain', 'Shine', 'Sunrise']
     pred_class = class_names[preds]
