@@ -46,7 +46,7 @@ if uploaded_file is not None:
    img = load_and_prep_image(uploaded_file)
    prob, class_name = predict_prob_and_class(loaded_model, img)
    st.write("Class:",class_name)
-   st.write("Probability",prob)
+   st.write("Probability",prob,"%")
 else:
    st.write("Upload a file")
 # url = st.text_input("Enter an url of a Picture")
