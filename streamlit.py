@@ -44,14 +44,14 @@ def load_and_prep_image(filename, img_shape=224, scale=False):
 img_url = st.text_input("Enter the URL of the image.")
 st.subheader("OR")
 uploaded_file = st.file_uploader("Upload an image")
-if img_url != "" and st.button("Submit", key=1):
+if img_url != "" and st.button("Submit URL", key=1):
    filename = wget.download(img_url)
    loaded_model = load_model('my_model.h5')
    img = load_and_prep_image(filename)
    prob, class_name = predict_prob_and_class(loaded_model, img)
    st.write("Class:",class_name)
    st.write("Max_prob",prob,"%")
-elif uploaded_file is not None and st.button("Submit", key=2):
+elif uploaded_file is not None and st.button("Submit Image", key=2):
    loaded_model = load_model('my_model.h5')
    img = load_and_prep_image(uploaded_file)
    prob, class_name = predict_prob_and_class(loaded_model, img)
