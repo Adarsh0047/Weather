@@ -50,7 +50,7 @@ if img_url != "":
    img = load_and_prep_image(filename)
    prob, class_name = predict_prob_and_class(loaded_model, img)
    st.write("Class:",class_name)
-   st.write("Max_prob",prob)
+   st.write("Max_prob",prob,"%")
 elif uploaded_file is not None:
    loaded_model = load_model('my_model.h5')
    img = load_and_prep_image(uploaded_file)
