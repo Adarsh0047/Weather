@@ -3,7 +3,7 @@ from PIL import Image
 import tensorflow as tf
 import numpy as np
 import wget
-st.set_page_config(page_title="The Weather App")
+st.set_page_config(page_title="The Weather App", layout="wide")
 st.header("Weather Classifier")
 def load_model(path):
     return tf.keras.models.load_model(path)
