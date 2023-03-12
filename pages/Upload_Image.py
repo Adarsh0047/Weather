@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import tensorflow as tf
 import numpy as np
-st.set_page_config("Upload Image", layout="wide",page_icon="upload.png")
+st.set_page_config(layout="wide",page_icon="upload.png")
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
