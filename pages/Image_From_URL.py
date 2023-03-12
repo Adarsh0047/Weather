@@ -3,7 +3,7 @@ from PIL import Image
 import tensorflow as tf
 import numpy as np
 import wget
-st.set_page_config(layout="wide",page_icon="www.png")
+st.set_page_config("Image From URL", layout="wide", page_icon="www.png")
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
