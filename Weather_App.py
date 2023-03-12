@@ -1,6 +1,11 @@
 import streamlit as st
 from PIL import Image
 st.set_page_config("Weather Predictor",layout="wide",page_icon="cloudy.png")
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+local_css("style.css")
 st.title("Welcome to the Weather App")
 st.balloons()
 with st.expander("Know More"):
