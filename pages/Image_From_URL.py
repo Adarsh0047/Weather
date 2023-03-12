@@ -50,7 +50,7 @@ def load_and_prep_image(filename, img_shape=224, scale=False):
   else:
     return img
 img_url = st.text_input("Enter the URL of the image.")
-if img_url != "" and st.button("Submit"):
+if img_url != "":
    filename = wget.download(img_url)
    img = load_and_prep_image(filename)
    prob, class_name = predict_prob_and_class(loaded_model, img)
