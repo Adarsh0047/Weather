@@ -49,7 +49,7 @@ def load_and_prep_image(filename, img_shape=224, scale=False):
   else:
     return img
 uploaded_file = st.file_uploader("Upload an image")
-if uploaded_file is not None and st.button("Submit"):
+if uploaded_file is not None:
    img = load_and_prep_image(uploaded_file)
    prob, class_name = predict_prob_and_class(loaded_model, img)
    st.write("Class:",class_name)
